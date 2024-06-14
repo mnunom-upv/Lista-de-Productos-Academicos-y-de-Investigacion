@@ -1,0 +1,107 @@
+
+\documentclass[a4paper,10pt]{article}
+\usepackage[left=1.5cm,top=2.0cm,right=1.5cm,bottom=2.5cm]{geometry}
+\usepackage[
+colorlinks,
+linkcolor=red,
+citecolor=blue,
+pdftex=true,
+bookmarks=true,
+bookmarksopen=false,
+pdftitle={Listado de Publicaciones},
+pdfsubject={Reporte Final de Proyecto},
+pdfkeywords={FPGAs, Reconfigurable Computing, Machine Learning, Computer Vision},
+pdfauthor={Marco Aurelio Nu\~no Maganda}
+]{hyperref}
+
+
+
+\usepackage{longtable}
+\usepackage[backend=biber,sorting=ddatent,style=ieee, defernumbers=true, natbib=true, isbn=true, maxnames=99, maxbibnames=99]{biblatex}
+\addbibresource{TodosNuevo.bib}
+
+%\preto\fullcite{\AtNextCite{\defcounter{maxnames}{99}}}
+
+%sorting by date 
+\DeclareSortingScheme{ddatent}{
+    \sort{
+        \field{presort}
+    }
+    \sort[final]{
+        \field{sortkey}
+    }
+    \sort[direction=descending]{
+        \field[strside=left,strwidth=4]{sortyear}
+        \field[strside=left,strwidth=4]{year}
+        \literal{9999}
+    }
+    \sort[direction=descending]{
+        \field[padside=left,padwidth=2,padchar=0]{month}
+        \literal{00}
+    }
+    \sort[direction=descending]{
+        \field[padside=left,padwidth=2,padchar=0]{day}
+        \literal{00}
+    }
+    \sort[direction=descending]{
+        \field[padside=left,padwidth=4,padchar=0]{volume}
+        \literal{9999}
+    }
+    \sort{
+        \name{sortname}
+        \name{author}
+        \name{editor}
+        \name{translator}
+        \field{sorttitle}
+        \field{title}
+    }
+    \sort{
+        \field{sorttitle}
+        \field{title}
+    }
+}
+
+%\title{Bibliography management: \texttt{biblatex} package}
+%\author{Share\LaTeX}
+
+% Count total number of entries in each refsection
+\AtDataInput{%
+  \csnumgdef{entrycount:\therefsection}{%
+    \csuse{entrycount:\therefsection}+1}}
+
+% Print the labelnumber as the total number of entries in the
+% current refsection, minus the actual labelnumber, plus one
+\DeclareFieldFormat{labelnumber}{\mkbibdesc{#1}}    
+\newrobustcmd*{\mkbibdesc}[1]{%
+  \number\numexpr\csuse{entrycount:\therefsection}+1-#1\relax}
+
+
+\begin{document}
+
+\begin{center}
+\small \'Ultima Actualizaci\'on: \today\ \\
+{\Huge {Listado de Productos Científicos y Tecnológicos y Formación de Recursos Humanos\\
+ }
+\normalsize
+\underline{DR. MARCO AURELIO NU\~{N}O MAGANDA} \\
+UNIVERSIDAD POLITÉCNICA DE VICTORIA \\
+}
+\end{center}
+
+
+
+\nocite{*} 
+
+\medskip
+
+
+% Para agregar una nueva referencia, ejecutar BIBER. En caso de ser la misma, solo correr PDFLATEX
+
+% Si se desea evidencia, incluir la siguiente linea (Comentar la siguiente)
+\input{Tabla.tex}
+% Si no se desea evidencia, incluir la siguiente linea
+\printbibliography
+
+\end{document}
+
+
