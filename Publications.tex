@@ -1,0 +1,133 @@
+%!TEX TS-program = xelatex
+%!TEX encoding   = UTF-8 Unicode
+
+\documentclass[letterpaper]{article}
+
+\usepackage[british]      {babel}       % hyphenation
+\usepackage[style=british]{csquotes}    % ensures that the proper quotes are used in the bibliography
+%\usepackage               {fontspec}    % font selection
+\usepackage               {microtype}   % micro typographical adjustments
+\usepackage               {setspace}    % line spacing
+\usepackage               {enumitem}    % changing the style of enumerations
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bibliography
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[
+  backend      = biber,
+  doi          = false,
+  giveninits   = false,
+  maxcitenames = 99,
+  isbn         = false,
+  url          = false,
+]{biblatex}
+
+
+% Uncomment this if you need a final period for your entries and do not
+% want to place it manually.
+%
+% \DeclareCiteCommand{\fullcite}
+%   {\usebibmacro{prenote}}
+%   {\usedriver{}{\thefield{entrytype}}.}
+%   {\multicitedelim}
+%   {\usebibmacro{postnote}}
+
+\AtEveryBibitem{\clearfield{month}}
+\AtEveryCitekey{\clearfield{month}}
+\AtEveryBibitem{\clearname{editor}}
+\AtEveryCitekey{\clearname{editor}}
+\AtEveryBibitem{\clearlist{location}}
+\AtEveryCitekey{\clearlist{location}}
+
+\addbibresource{Publications.bib}
+
+\renewcommand*{\mkbibcompletename}[1]{%
+  \ifitemannotation{highlight}
+    {\textbf{#1}}
+    {#1}%
+  \ifitemannotation{first}
+    {\kern-0.05em\textsuperscript{$\dagger$}}
+    {}%
+  \ifitemannotation{last}
+    {\textsuperscript{$\ddagger$}}
+    {}%
+}
+
+% Remove the year from the citation of the article in order to make the
+% display less cluttered.
+\renewbibmacro*{issue+date}{%
+  \setunit{\addcomma\space}
+    \iffieldundef{issue}
+      {\usebibmacro{date}}
+      {\printfield{issue}%
+       \setunit*{\addspace}%
+       \usebibmacro{date}%
+      }%
+  \newunit%
+}
+
+\renewbibmacro*{publisher+location+date}{%
+  \printlist{publisher}%
+  \setunit*{\addcomma\space}%
+  \printlist{location}%
+  \setunit*{\addcomma\space}%
+  \usebibmacro{date}%
+  \newunit%
+}
+
+\DeclareFieldFormat[article, incollection, inproceedings, misc, unpublished]{title}{\textit{#1}}
+\DeclareFieldFormat[article]{journaltitle}{\upshape{#1}}
+\DeclareFieldFormat[incollection, inproceedings]{booktitle}{\upshape{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% General layout & typography
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\defaultfontfeatures{Ligatures=TeX}
+%\setmainfont[Numbers={Proportional,OldStyle}]{Minion Pro}
+%\setsansfont[Scale=MatchLowercase]{Lato}
+%\setmonofont[Scale=MatchLowercase]{Hack}
+
+%\setkomafont{sectioning}{\normalfont\scshape}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Main document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+  \begin{flushleft}
+    \parindent 0pt
+    {\textsc{Publication list}}\\
+    \emph{Bastian Rieck}\\[0.5cm]
+  \end{flushleft}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % Option I: \printbibliography
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  \nocite{*}
+  \printbibliography[title = {All my publications}]
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % Option II: manually-curated lists
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \section*{Conference publications}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  \begin{enumerate}
+    \item \fullcite{Moor20a}
+  \end{enumerate}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \section*{Journal publications}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  \begin{enumerate}[resume]
+    \item \fullcite{Bock18}
+  \end{enumerate}
+
+\end{document}
