@@ -6,6 +6,9 @@
 #git branch -M main
 #git remote add origin https://github.com/mnunom-upv/Lista-de-Productos-Academicos-y-de-Investigacion.git
 
+# Clonar repositiro remoto a local
+#gh repo clone mnunom-upv/Lista-de-Productos-Academicos-y-de-Investigacion
+
 current=$(date '+%s')
 #echo $current
 
