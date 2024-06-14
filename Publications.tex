@@ -1,142 +1,409 @@
-%!TEX TS-program = xelatex
-%!TEX encoding   = UTF-8 Unicode
+%-------------------------
+% Resume in Latex
+% Author : Gennadii Chursov
+% Based off of: https://github.com/sb2nov/resume and https://www.overleaf.com/latex/templates/jakes-resume/syzfjbzwjncs
+% License : MIT
+%------------------------
 
-\documentclass[letterpaper]{article}
+% Curriculum Unificado: Mismo documento para obtener publicaciones, lista de platicas
 
-\usepackage[british]      {babel}       % hyphenation
-\usepackage[style=british]{csquotes}    % ensures that the proper quotes are used in the bibliography
-%\usepackage               {fontspec}    % font selection
-\usepackage               {microtype}   % micro typographical adjustments
-\usepackage               {setspace}    % line spacing
-\usepackage               {enumitem}    % changing the style of enumerations
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Bibliography
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[letterpaper,10pt]{article}
 
 \usepackage[
-  backend      = biber,
-  doi          = false,
-  giveninits   = false,
-  maxcitenames = 99,
-  isbn         = false,
-  url          = false,
-]{biblatex}
+colorlinks,
+linkcolor=blue,
+citecolor=green,
+pdftex=true,
+bookmarks=true,
+bookmarksopen=false,
+pdftitle={Listado de Publicaciones},
+pdfsubject={Reporte Final de Proyecto},
+pdfkeywords={FPGAs, Reconfigurable Computing, Machine Learning, Computer Vision},
+pdfauthor={Marco Aurelio Nu\~no Maganda}
+]{hyperref}
+
+\usepackage{pdfpages}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[spanish]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
 
 
-% Uncomment this if you need a final period for your entries and do not
-% want to place it manually.
-%
-% \DeclareCiteCommand{\fullcite}
-%   {\usebibmacro{prenote}}
-%   {\usedriver{}{\thefield{entrytype}}.}
-%   {\multicitedelim}
-%   {\usebibmacro{postnote}}
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
 
-\AtEveryBibitem{\clearfield{month}}
-\AtEveryCitekey{\clearfield{month}}
-\AtEveryBibitem{\clearname{editor}}
-\AtEveryCitekey{\clearname{editor}}
-\AtEveryBibitem{\clearlist{location}}
-\AtEveryCitekey{\clearlist{location}}
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
 
-\addbibresource{Publications.bib}
 
-\renewcommand*{\mkbibcompletename}[1]{%
-  \ifitemannotation{highlight}
-    {\textbf{#1}}
-    {#1}%
-  \ifitemannotation{first}
-    {\kern-0.05em\textsuperscript{$\dagger$}}
-    {}%
-  \ifitemannotation{last}
-    {\textsuperscript{$\ddagger$}}
-    {}%
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
 }
 
-% Remove the year from the citation of the article in order to make the
-% display less cluttered.
-\renewbibmacro*{issue+date}{%
-  \setunit{\addcomma\space}
-    \iffieldundef{issue}
-      {\usebibmacro{date}}
-      {\printfield{issue}%
-       \setunit*{\addspace}%
-       \usebibmacro{date}%
-      }%
-  \newunit%
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
 }
 
-\renewbibmacro*{publisher+location+date}{%
-  \printlist{publisher}%
-  \setunit*{\addcomma\space}%
-  \printlist{location}%
-  \setunit*{\addcomma\space}%
-  \usebibmacro{date}%
-  \newunit%
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
 }
 
-\DeclareFieldFormat[article, incollection, inproceedings, misc, unpublished]{title}{\textit{#1}}
-\DeclareFieldFormat[article]{journaltitle}{\upshape{#1}}
-\DeclareFieldFormat[incollection, inproceedings]{booktitle}{\upshape{#1}}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% General layout & typography
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
 
-%\defaultfontfeatures{Ligatures=TeX}
-%\setmainfont[Numbers={Proportional,OldStyle}]{Minion Pro}
-%\setsansfont[Scale=MatchLowercase]{Lato}
-%\setmonofont[Scale=MatchLowercase]{Hack}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
-%\setkomafont{sectioning}{\normalfont\scshape}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Main document
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\usepackage[backend=biber,sorting=ddatent,style=ieee, defernumbers=true, natbib=true, isbn=true, maxnames=99, maxbibnames=99]{biblatex}
+
+\DeclareSortingScheme{ddatent}{
+    \sort{
+        \field{presort}
+    }
+    \sort[final]{
+        \field{sortkey}
+    }
+    \sort[direction=descending]{
+        \field[strside=left,strwidth=4]{sortyear}
+        \field[strside=left,strwidth=4]{year}
+        \literal{9999}
+    }
+    \sort[direction=descending]{
+        \field[padside=left,padwidth=2,padchar=0]{month}
+        \literal{00}
+    }
+    \sort[direction=descending]{
+        \field[padside=left,padwidth=2,padchar=0]{day}
+        \literal{00}
+    }
+    \sort[direction=descending]{
+        \field[padside=left,padwidth=4,padchar=0]{volume}
+        \literal{9999}
+    }
+    \sort{
+        \name{sortname}
+        \name{author}
+        \name{editor}
+        \name{translator}
+        \field{sorttitle}
+        \field{title}
+    }
+    \sort{
+        \field{sorttitle}
+        \field{title}
+    }
+}
+
+% NO dejar lineas en blanco porque la se;orita se enoja!!
+\DeclareSourcemap{
+  \maps[datatype=bibtex, overwrite]{
+    \map{
+      \perdatasource{TesisDirigidasMaestria.bib}
+      \step[fieldset=keywords, fieldvalue={, }, appendstrict]
+      \step[fieldset=keywords, fieldvalue=one, append]
+    }
+    \map{
+      \perdatasource{TesisDirigidasLicenciatura.bib}
+      \step[fieldset=keywords, fieldvalue={, }, appendstrict]
+      \step[fieldset=keywords, fieldvalue=two, append]
+    }
+    \map{
+      \perdatasource{Revistas.bib}
+      \step[fieldset=keywords, fieldvalue={, }, appendstrict]
+      \step[fieldset=keywords, fieldvalue=three, append]
+    }
+    \map{
+      \perdatasource{CongresosArb.bib}
+      \step[fieldset=keywords, fieldvalue={, }, appendstrict]
+      \step[fieldset=keywords, fieldvalue=four, append]
+    }
+    \map{
+      \perdatasource{CongresosEspanol.bib}
+      \step[fieldset=keywords, fieldvalue={, }, appendstrict]
+      \step[fieldset=keywords, fieldvalue=five, append]
+    }
+    \map{
+      \perdatasource{DivulgacionCienciaTecnologia.bib}
+      \step[fieldset=keywords, fieldvalue={, }, appendstrict]
+      \step[fieldset=keywords, fieldvalue=DCyT, append]
+    }
+    \map{
+      \perdatasource{DifusionEnEventos.bib}
+      \step[fieldset=keywords, fieldvalue={, }, appendstrict]
+      \step[fieldset=keywords, fieldvalue=DEPA, append]
+    }
+    \map{
+      \perdatasource{Cursos.bib}
+      \step[fieldset=keywords, fieldvalue={, }, appendstrict]
+      \step[fieldset=keywords, fieldvalue=CURSOS, append]
+    }
+  }
+}
+
+% Count total number of entries in each refsection
+\AtDataInput{%
+  \csnumgdef{entrycount:\therefsection}{%
+    \csuse{entrycount:\therefsection}+1}}
+
+% Print the labelnumber as the total number of entries in the
+% current refsection, minus the actual labelnumber, plus one
+\DeclareFieldFormat{labelnumber}{\mkbibdesc{#1}}    
+\newrobustcmd*{\mkbibdesc}[1]{%
+  \number\numexpr\csuse{entrycount:\therefsection}+1-#1\relax}
+
+\addbibresource{TesisDirigidasMaestria.bib}
+\addbibresource{TesisDirigidasLicenciatura.bib}
+\addbibresource{Revistas.bib}
+\addbibresource{CongresosArb.bib}
+\addbibresource{CongresosEspanol.bib}
+\addbibresource{DivulgacionCienciaTecnologia.bib}
+\addbibresource{DifusionEnEventos.bib}
+\addbibresource{Cursos.bib}
+
+
+\newcounter{num}
+\setcounter{num}{0} % 1=> LINKS DE EVIDENCIA, 0=> NO LINKS DE EVIDENCIA
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \begin{document}
 
-  \begin{center}
- Profesor Investigador en Ciencias de la Computación\\
-    \emph{Marco Aurelio Nuño-Maganda}\\[0.5cm]
-  \end{center}
-  
-  Primera Version del Dr. Marco....
-  
-  
-  ToDo's:
-  \begin{itemize}
-  \item Agreagr los .bib
-  \item Agregar las evidencias
-  \item Sincronizar
-  \end{itemize}
-  
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  % Option I: \printbibliography
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
 
-  \nocite{*}
-  \printbibliography[title = {All my publications}]
+\begin{center}
+    \textbf{\Large \scshape Marco Aurelio Nuño Maganda} \\ \vspace{1pt}
+    \textit{Profesor Investigador en Ciencias de la Computación} \\
+    Última Actualización: \today \\
+%    123-456-7890 $|$ \href{mailto:namesurname@gmail.com}{\underline{namesurname@gmail.com}} $|$ 
+%    \href{https://www.linkedin.com/in/namesurname/}{\underline{linkedin.com/in/namesurname/}} $|$
+%    \href{https://github.com/namesurname}{\underline{github.com/namesurname}}
+\end{center}
 
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  % Option II: manually-curated lists
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\vspace{2.5cm}
+\begin{minipage}{0.98 \textwidth} % 0.5 \textwidth = 50% ancho de página
+%\begin{center}
+%Nombre: \textbf{Marco Aurelio Nu\~{n}o Maganda} \\
+Fecha de Nacimiento: \textbf{12 de Agosto de 1978} \\
+Lugar de Nacimiento: \textbf{Mexico, D. F.}\\
+Nacionalidad: \textbf{Mexicana}\\
+Telefono: 834-147-28-35  \\
+ORCID: \ \ \textbf{\url{https://orcid.org/0000-0003-0102-8227}} \\
+%Mendeley: \\
+%\textbf{\url{https://www.mendeley.com/profiles/marco-aurelio-nuo-maganda/}} \\
+Scopus: \ \ \textbf{\url{https://www.scopus.com/authid/detail.uri?authorId=15846253000}} \\
+Sci Profile:\ \ \textbf{\url{https://sciprofiles.com/profile/449039}} \\
+Google Scholar:\ \ \textbf{\url{https://scholar.google.com/citations?user=hSfqx4EAAAAJ&hl=en}}\\
+Research Gate:\ \ \textbf{\url{https://www.researchgate.net/profile/Marco_Nuno}}\\
+Publons:\ \  \textbf{\url{https://publons.com/researcher/1603078/marco-aurelio-nuno-maganda}}\\
+\end{minipage}
 
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \section*{Conference publications}
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-  \begin{enumerate}
-    \item \fullcite{Moor20a}
-  \end{enumerate}
+%-----------SUMMARY-----------
+%\section*{Summary}
 
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \section*{Journal publications}
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Results-oriented and detail-driven Automation Quality Engineer with a strong background in Java programming and a passion for ensuring software reliability. Experienced in designing, implementing, and executing automated test scripts to verify the functionality and performance of software applications. Proven track record of collaborating with development teams to identify and resolve issues early in the development process. Adept at utilizing testing frameworks such as JUnit and incorporating continuous integration tools like Jenkins. Skilled in creating and maintaining automated test suites for web and mobile applications. Committed to delivering high-quality software by applying industry best practices in testing and automation. Seeking opportunities to contribute technical expertise and enhance software development processes as an Automation Quality Engineer.
 
-  \begin{enumerate}[resume]
-    \item \fullcite{Bock18}
-  \end{enumerate}
+%-----------PROGRAMMING SKILLS-----------
+
+\section{Educación}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+\item 2006 -- 2009: \textbf{Doctorado en Ciencias con Especialidad en Ciencias Computacionales}. 
+    Instituto Nacional de Astrofísica, Óptica y Electrónica (INAOE), Puebla, México.
+\ifthenelse{\(\value{num}=1\)}{\hyperlink{./../Evidencias/sensors-18-02202-v2.pdf.1}{Titulo y Cédula}}{}
+%
+\item 2001 -- 2003: \textbf{Maestría en Ciencias con Especialidad en Ciencias Computacionales}
+    Instituto Nacional de Astrofísica, Óptica y Electrónica (INAOE), Puebla, México. 
+\ifthenelse{\(\value{num}=1\)}{\hyperlink{./../Evidencias/sensors-18-02202-v2.pdf.1}{Titulo y Cédula}}{}
+
+\item 1996 -- 2001: \textbf{Licenciatura en Ingeniería en Computación}.
+	Universidad Americana de Acapulco (Incorporada a la UNAM), Acapulco, México, Graduado con Mención Honorífica. 
+\ifthenelse{\(\value{num}=1\)}{\hyperlink{./../Evidencias/sensors-18-02202-v2.pdf.1}{Titulo y Cédula}}{}
+ \end{itemize}
+
+
+\section{Pertenencia al Sistema Nacional de Investigadores (SNI)}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+\item 2023 -- 2027: Miembro del \textbf{Sistema Nacional de Investigadores (SNI)}, Nivel I (Enero 2023 a Diciembre de 2027). \ifthenelse{\(\value{num}=1\)}{\hyperlink{./../Evidencias/sensors-18-02202-v2.pdf.1}{Titulo y Cédula}}{}
+\item 2020 -- 2023: Miembro del \textbf{Sistema Nacional de Investigadores (SNI)}, Nivel I (Enero 2020 a Diciembre de 2022). \ifthenelse{\(\value{num}=1\)}{\hyperlink{./../Evidencias/sensors-18-02202-v2.pdf.1}{Titulo y Cédula}}{}
+\item 2014 -- 2016: Miembro del \textbf{Sistema Nacional de Investigadores (SNI)}, Nivel Candidato (Enero 2014 a Diciembre de 2016). \ifthenelse{\(\value{num}=1\)}{\hyperlink{./../Evidencias/sensors-18-02202-v2.pdf.1}{Titulo y Cédula}}{}
+ \end{itemize}
+
+
+
+\section{Experiencia Profesional y Docente}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+\item 2009 -- 2024: \textbf{Profesor de Tiempo Completo}, Universidad Politécnica de Victoria (UPV), Ciudad Victoria, Tamaulipas.  Principales funciones: Catedrático de Asignatura en Nivel Maestría y Licenciatura (Carrera: Ingenier\'ia en Tecnologías de la Información).
+\ifthenelse{\(\value{num}=1\)}{\hyperlink{./../Evidencias/sensors-18-02202-v2.pdf.1}{Titulo y Cédula}}{}
+
+\item 2005 -- 2009: \textbf{Profesor de Asignatura}, Instituto Tecnol\'ogico Superior de Atlixco (ITSA), Atlixco, Puebla. Principales funciones: Catedrático de Asignatura en Nivel Licenciatura (Carrera: Ingenier\'ia en Sistemas Computacionales). \ifthenelse{\(\value{num}=1\)}{\hyperlink{./../Evidencias/sensors-18-02202-v2.pdf.1}{Titulo y Cédula}}{}
+
+\item 2006 -- 2006: \textbf{Profesor de Asignatura}, Universidad Polit\'ecnica de Puebla (UPP), Cholula, Puebla. Principales funciones: Catedrático de Asignatura en Nivel Licenciatura (Carrera: Lic en Inform\'atica) 
+\ifthenelse{\(\value{num}=1\)}{\hyperlink{./../Evidencias/sensors-18-02202-v2.pdf.1}{Titulo y Cédula}}{}
+
+\item 2004 -- 2005: \textbf{Programador de Base de Datos}, Centro Regional para la Competitividad Empresarial (CRECE)-OAXACA, Oaxaca, Oaxaca. Principales funciones: An\'alisis y Dise\~no de aplicaciones de Bases de Datos. Lenguaje de Programaci\'on utilizado: Visual Fox Pro. 
+\ifthenelse{\(\value{num}=1\)}{\hyperlink{./../Evidencias/sensors-18-02202-v2.pdf.1}{Titulo y Cédula}}{}
+
+\item 2003 -- 2005: \textbf{Programador de Aplicaciones FPGA}, Instituto Nacional de Astrofísica, Óptica y Electrónica (INAOE), Cholula, Puebla. Principales funciones: Análisis y Diseño de Aplicaciones Implementadas en FPGAs para resolver problemas de Vision por Computadora. Programación en Lenguajes de Descripcion de Hardware y uso de Herramientas CAD para implementación de Aplicaciones en FPGA. 
+\ifthenelse{\(\value{num}=1\)}{\hyperlink{./../Evidencias/sensors-18-02202-v2.pdf.1}{Titulo y Cédula}}{}
+
+ \end{itemize}
+
+% De uso exclusivo UPV - Duplicados entre Congresos, Cap de Libro y Revistas
+\section{Cursos}
+\begin{refsection}[Cursos]
+\nocite{*}
+\printbibliography[heading={none}, keyword=CURSOS, resetnumbers=true]
+\end{refsection}
+
+
+
+% De uso exclusivo UPV - Duplicados entre Congresos, Cap de Libro y Revistas
+\section{Difusión en Congresos Especializados}
+\begin{refsection}[DifusionEnEventos]
+\nocite{*}
+\printbibliography[heading={none}, keyword=DEPA, resetnumbers=true]
+\end{refsection}
+
+
+
+\section{Divulgacion Ciencia y Tecnologia}
+\begin{refsection}[DivulgacionCienciaTecnologia]
+\nocite{*}
+%\printbibliography[title={Divulgacion de Ciencia y Tecnologia}, keyword=DCyT, resetnumbers=true]
+\printbibliography[heading={none}, keyword=DCyT, resetnumbers=true]
+\end{refsection}
+
+
+
+
+
+
+
+\section{Ponencias en Congresos Internacionales en Inglés}
+\begin{refsection}[CongresosArb]
+\nocite{*}
+%\printbibliography[title={Ponencias en Congresos Internacionales en Inglés}, keyword=four, resetnumbers=true]
+\printbibliography[heading={none}, keyword=four, resetnumbers=true]
+\end{refsection}
+
+
+
+\section{Ponencias en Congresos en Espanol}
+\begin{refsection}[CongresosEspanol]
+\nocite{*}
+%\printbibliography[title={Ponencias en Congresos Internacionales en Espanol}, keyword=five, resetnumbers=true]
+\printbibliography[heading={none}, keyword=five, resetnumbers=true]
+\end{refsection}
+
+\section{Revistas Arbitradas e Indexadas}
+\begin{refsection}[Revistas]
+\nocite{*}
+%\printbibliography[title={First Bibliography}, keyword=three, resetnumbers=true]
+\printbibliography[heading={none}, keyword=three, resetnumbers=true]
+\end{refsection}
+
+
+\section{Tesis de Maestría Dirigidas}
+\begin{refsection}[TesisDirigidasMaestria]
+\nocite{*}
+%\printbibliography[title={First Bibliography}, keyword=one, resetnumbers=true]
+\printbibliography[heading={none}, keyword=one, resetnumbers=true]
+\end{refsection}
+
+\section{Tesis de Licenciatura Dirigidas}
+\begin{refsection}[TesisDirigidasLicenciatura]
+\nocite{*}
+%\printbibliography[title={First Bibliography}, keyword=two, resetnumbers=true]
+\printbibliography[heading={none}, keyword=two, resetnumbers=true]
+\end{refsection}
+
+
+
+% De requerir evidencias, deberan incluirse con sus respectivos
+\ifthenelse{\(\value{num}=1\)}{\clearpage}{}
+%\includepdf[pages=1-,link=true]{./../Evidencias/applsci-10-06846.pdf}
+\ifthenelse{\(\value{num}=1\)}{\includepdf[pages={1},link=true]{./../Evidencias/applsci-10-06846.pdf}}{}
+%\includepdf[pages=1-,link=true]{./../Evidencias/sensors-18-02202-v2.pdf}
+\ifthenelse{\(\value{num}=1\)}{\includepdf[pages={1},link=true]{./../Evidencias/sensors-18-02202-v2.pdf}}{}
+
 
 \end{document}
+
+
+\end{document}
+
+
+
+

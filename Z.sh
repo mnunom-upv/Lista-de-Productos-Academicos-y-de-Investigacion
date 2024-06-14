@@ -22,7 +22,8 @@ pdflatex Publications.tex
 # Agrega un archivo
 git add Publications.tex
 git add Z.sh
-git add Publications.bib
+git add *.bib
+git add *.sty
 git add Publications.pdf
 
 # Establece una version
