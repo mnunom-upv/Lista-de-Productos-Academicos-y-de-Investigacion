@@ -31,4 +31,4 @@ git commit -m "Version${current}"
 # Hace el Push
 git push -u origin main
 
-atril Publications.pdf
+open Publications.pdf
