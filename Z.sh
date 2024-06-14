@@ -20,6 +20,7 @@ pdflatex Publications.tex
 git add Publications.tex
 git add Z.sh
 git add Publications.bib
+git add Publications.pdf
 
 # Establece una version
 git commit -m "Version${current}"
