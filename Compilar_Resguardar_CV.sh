@@ -19,7 +19,7 @@ pdflatex Publications.tex
 biber Publications
 pdflatex Publications.tex
 pdflatex Publications.tex
-rm *.aux *.blg *.out *.bcf *.xml *.log
+rm *.aux *.bbl *.blg *.out *.bcf *.xml *.log
 
 # Agrega un archivo
 git add Publications.tex
