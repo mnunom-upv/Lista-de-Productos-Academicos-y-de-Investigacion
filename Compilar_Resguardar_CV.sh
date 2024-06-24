@@ -15,11 +15,14 @@ current=$(date '+%s')
 #exit()
 
 
+rm *.aux *.bbl *.blg *.out *.bcf *.xml *.log
 pdflatex Publications.tex
 biber Publications
 pdflatex Publications.tex
 pdflatex Publications.tex
 rm *.aux *.bbl *.blg *.out *.bcf *.xml *.log
+
+
 
 # Agrega un archivo
 git add Publications.tex
