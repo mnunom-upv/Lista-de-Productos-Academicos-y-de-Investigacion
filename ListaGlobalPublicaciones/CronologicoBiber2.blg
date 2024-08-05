@@ -1,0 +1,19 @@
+[0] Config.pm:307> INFO - This is Biber 2.17
+[0] Config.pm:310> INFO - Logfile is 'CronologicoBiber2.blg'
+[151] biber:340> INFO - === mar jun 18, 2024, 09:16:23
+[176] Biber.pm:418> INFO - Reading 'CronologicoBiber2.bcf'
+[322] Biber.pm:969> INFO - Using all citekeys in bib section 0
+[352] Biber.pm:4383> INFO - Processing section 0
+[373] Biber.pm:4574> INFO - Looking for bibtex file 'TodosNuevo.bib' for section 0
+[381] bibtex.pm:1713> INFO - LaTeX decoding ...
+[607] bibtex.pm:1518> INFO - Found BibTeX data source 'TodosNuevo.bib'
+[2576] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[2576] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[2576] Biber.pm:4203> INFO - Sorting list 'ddatent/global//global/global' of type 'entry' with template 'ddatent' and locale 'en-US'
+[2576] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
+[2974] bbl.pm:654> INFO - Writing 'CronologicoBiber2.bbl' with encoding 'UTF-8'
+[3080] bbl.pm:757> INFO - Output to CronologicoBiber2.bbl
+[3080] Biber.pm:130> WARN - BibTeX subsystem: /tmp/biber_tmp_iQYy/17e1a8a004e97fc68779a374a0288d6a_4266.utf8, line 78, warning: 3 characters of junk seen at toplevel
+[3080] Biber.pm:130> WARN - BibTeX subsystem: /tmp/biber_tmp_iQYy/17e1a8a004e97fc68779a374a0288d6a_4266.utf8, line 96, warning: 3 characters of junk seen at toplevel
+[3080] Biber.pm:130> WARN - BibTeX subsystem: /tmp/biber_tmp_iQYy/17e1a8a004e97fc68779a374a0288d6a_4266.utf8, line 121, warning: 3 characters of junk seen at toplevel
+[3080] Biber.pm:132> INFO - WARNINGS: 3

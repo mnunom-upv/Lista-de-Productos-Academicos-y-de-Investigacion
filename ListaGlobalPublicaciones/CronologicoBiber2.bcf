@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bcf:controlfile version="3.11" bltxversion="3.20" xmlns:bcf="https://sourceforge.net/projects/biblatex">
+<bcf:controlfile version="3.8" bltxversion="3.17" xmlns:bcf="https://sourceforge.net/projects/biblatex">
   <!-- BIBER OPTIONS -->
   <bcf:options component="biber" type="global">
     <bcf:option type="singlevalued">
@@ -37,11 +37,6 @@
     <bcf:option type="singlevalued">
       <bcf:key>alphaothers</bcf:key>
       <bcf:value>+</bcf:value>
-    </bcf:option>
-    <bcf:option type="multivalued">
-      <bcf:key>extradatecontext</bcf:key>
-      <bcf:value order="1">labelname</bcf:value>
-      <bcf:value order="2">labeltitle</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>labelalpha</bcf:key>
@@ -96,7 +91,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxbibnames</bcf:key>
-      <bcf:value>3</bcf:value>
+      <bcf:value>99</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxcitenames</bcf:key>
@@ -104,7 +99,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxsortnames</bcf:key>
-      <bcf:value>3</bcf:value>
+      <bcf:value>99</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxitems</bcf:key>
@@ -116,15 +111,15 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>minbibnames</bcf:key>
-      <bcf:value>1</bcf:value>
+      <bcf:value>3</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>mincitenames</bcf:key>
-      <bcf:value>1</bcf:value>
+      <bcf:value>3</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>minsortnames</bcf:key>
-      <bcf:value>1</bcf:value>
+      <bcf:value>3</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>minitems</bcf:key>
@@ -140,10 +135,6 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>nosortothers</bcf:key>
-      <bcf:value>0</bcf:value>
-    </bcf:option>
-    <bcf:option type="singlevalued">
-      <bcf:key>pluralothers</bcf:key>
       <bcf:value>0</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
@@ -168,11 +159,11 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>sortlocale</bcf:key>
-      <bcf:value>british</bcf:value>
+      <bcf:value>english</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>sortingtemplatename</bcf:key>
-      <bcf:value>nty</bcf:value>
+      <bcf:value>ddatent</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>sortsets</bcf:key>
@@ -281,11 +272,6 @@
   </bcf:options>
   <!-- online -->
   <bcf:options component="biblatex" type="online">
-    <bcf:option type="multivalued">
-      <bcf:key>extradatecontext</bcf:key>
-      <bcf:value order="1">labelname</bcf:value>
-      <bcf:value order="2">labeltitle</bcf:value>
-    </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>labelalpha</bcf:key>
       <bcf:value>0</bcf:value>
@@ -331,7 +317,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxbibnames</bcf:key>
-      <bcf:value>3</bcf:value>
+      <bcf:value>99</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxcitenames</bcf:key>
@@ -339,7 +325,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxsortnames</bcf:key>
-      <bcf:value>3</bcf:value>
+      <bcf:value>99</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxitems</bcf:key>
@@ -351,15 +337,15 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>minbibnames</bcf:key>
-      <bcf:value>1</bcf:value>
+      <bcf:value>3</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>mincitenames</bcf:key>
-      <bcf:value>1</bcf:value>
+      <bcf:value>3</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>minsortnames</bcf:key>
-      <bcf:value>1</bcf:value>
+      <bcf:value>3</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>minitems</bcf:key>
@@ -386,11 +372,11 @@
       <bcf:value>0</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
-      <bcf:key>skipbiblist</bcf:key>
+      <bcf:key>skiplab</bcf:key>
       <bcf:value>0</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
-      <bcf:key>skiplab</bcf:key>
+      <bcf:key>skipbiblist</bcf:key>
       <bcf:value>0</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
@@ -502,11 +488,9 @@
     <bcf:option datatype="xml">inheritance</bcf:option>
     <bcf:option datatype="xml">translit</bcf:option>
     <bcf:option datatype="xml">uniquenametemplate</bcf:option>
-    <bcf:option datatype="xml">namehashtemplate</bcf:option>
     <bcf:option datatype="xml">sortingnamekeytemplate</bcf:option>
     <bcf:option datatype="xml">sortingtemplate</bcf:option>
     <bcf:option datatype="xml">extradatespec</bcf:option>
-    <bcf:option datatype="xml">extradatecontext</bcf:option>
     <bcf:option datatype="xml">labelnamespec</bcf:option>
     <bcf:option datatype="xml">labeltitlespec</bcf:option>
     <bcf:option datatype="xml">labeldatespec</bcf:option>
@@ -615,7 +599,6 @@
     <bcf:option datatype="boolean">labeltitle</bcf:option>
     <bcf:option datatype="boolean">labeltitleyear</bcf:option>
     <bcf:option datatype="boolean">labeldateparts</bcf:option>
-    <bcf:option datatype="boolean">pluralothers</bcf:option>
     <bcf:option datatype="boolean">nohashothers</bcf:option>
     <bcf:option datatype="boolean">nosortothers</bcf:option>
     <bcf:option datatype="boolean">noroman</bcf:option>
@@ -643,6 +626,8 @@
     <bcf:option datatype="boolean">eprint</bcf:option>
     <bcf:option datatype="boolean">related</bcf:option>
     <bcf:option datatype="boolean">subentry</bcf:option>
+    <bcf:option datatype="boolean">dashed</bcf:option>
+    <bcf:option datatype="boolean">subentrycomp</bcf:option>
     <bcf:option datatype="boolean">bibtexcaseprotection</bcf:option>
     <bcf:option datatype="integer">mincrossrefs</bcf:option>
     <bcf:option datatype="integer">minxrefs</bcf:option>
@@ -725,12 +710,12 @@
     <bcf:option datatype="boolean">eprint</bcf:option>
     <bcf:option datatype="boolean">related</bcf:option>
     <bcf:option datatype="boolean">subentry</bcf:option>
+    <bcf:option datatype="boolean">subentrycomp</bcf:option>
     <bcf:option datatype="boolean">bibtexcaseprotection</bcf:option>
     <bcf:option datatype="xml">labelalphatemplate</bcf:option>
     <bcf:option datatype="xml">translit</bcf:option>
     <bcf:option datatype="xml">sortexclusion</bcf:option>
     <bcf:option datatype="xml">sortinclusion</bcf:option>
-    <bcf:option datatype="xml">extradatecontext</bcf:option>
     <bcf:option datatype="xml">labelnamespec</bcf:option>
     <bcf:option datatype="xml">labeltitlespec</bcf:option>
     <bcf:option datatype="xml">labeldatespec</bcf:option>
@@ -749,10 +734,9 @@
   </bcf:optionscope>
   <bcf:optionscope type="ENTRY">
     <bcf:option datatype="string">noinherit</bcf:option>
-    <bcf:option datatype="string" backendin="sortingnamekeytemplatename,uniquenametemplatename,labelalphanametemplatename,namehashtemplatename">nametemplates</bcf:option>
+    <bcf:option datatype="string" backendin="sortingnamekeytemplatename,uniquenametemplatename,labelalphanametemplatename">nametemplates</bcf:option>
     <bcf:option datatype="string" backendout="1">labelalphanametemplatename</bcf:option>
     <bcf:option datatype="string" backendout="1">uniquenametemplatename</bcf:option>
-    <bcf:option datatype="string" backendout="1">namehashtemplatename</bcf:option>
     <bcf:option datatype="string" backendout="1">sortingnamekeytemplatename</bcf:option>
     <bcf:option datatype="string">presort</bcf:option>
     <bcf:option datatype="string" backendout="1">indexing</bcf:option>
@@ -814,6 +798,7 @@
     <bcf:option datatype="boolean" backendout="1">eprint</bcf:option>
     <bcf:option datatype="boolean" backendout="1">related</bcf:option>
     <bcf:option datatype="boolean" backendout="1">subentry</bcf:option>
+    <bcf:option datatype="boolean" backendout="1">subentrycomp</bcf:option>
     <bcf:option datatype="boolean" backendout="1">bibtexcaseprotection</bcf:option>
     <bcf:option datatype="integer" backendin="maxcitenames,maxbibnames,maxsortnames">maxnames</bcf:option>
     <bcf:option datatype="integer" backendin="mincitenames,minbibnames,minsortnames">minnames</bcf:option>
@@ -829,10 +814,9 @@
     <bcf:option datatype="integer" backendout="1">minalphanames</bcf:option>
   </bcf:optionscope>
   <bcf:optionscope type="NAMELIST">
-    <bcf:option datatype="string" backendin="sortingnamekeytemplatename,uniquenametemplatename,labelalphanametemplatename,namehashtemplatename">nametemplates</bcf:option>
+    <bcf:option datatype="string" backendin="sortingnamekeytemplatename,uniquenametemplatename,labelalphanametemplatename">nametemplates</bcf:option>
     <bcf:option datatype="string" backendout="1">labelalphanametemplatename</bcf:option>
     <bcf:option datatype="string" backendout="1">uniquenametemplatename</bcf:option>
-    <bcf:option datatype="string" backendout="1">namehashtemplatename</bcf:option>
     <bcf:option datatype="string" backendout="1">sortingnamekeytemplatename</bcf:option>
     <bcf:option datatype="string">uniquelist</bcf:option>
     <bcf:option datatype="string">uniquename</bcf:option>
@@ -846,10 +830,9 @@
     <bcf:option datatype="boolean" backendout="1">useprefix</bcf:option>
   </bcf:optionscope>
   <bcf:optionscope type="NAME">
-    <bcf:option datatype="string" backendin="sortingnamekeytemplatename,uniquenametemplatename,labelalphanametemplatename,namehashtemplatename">nametemplates</bcf:option>
+    <bcf:option datatype="string" backendin="sortingnamekeytemplatename,uniquenametemplatename,labelalphanametemplatename">nametemplates</bcf:option>
     <bcf:option datatype="string" backendout="1">labelalphanametemplatename</bcf:option>
     <bcf:option datatype="string" backendout="1">uniquenametemplatename</bcf:option>
-    <bcf:option datatype="string" backendout="1">namehashtemplatename</bcf:option>
     <bcf:option datatype="string" backendout="1">sortingnamekeytemplatename</bcf:option>
     <bcf:option datatype="string">uniquename</bcf:option>
     <bcf:option datatype="boolean" backendout="1">familyinits</bcf:option>
@@ -1063,15 +1046,8 @@
     <bcf:namepart order="2" base="1">family</bcf:namepart>
     <bcf:namepart order="3">given</bcf:namepart>
   </bcf:uniquenametemplate>
-  <!-- NAME HASH TEMPLATES -->
-  <bcf:namehashtemplate name="global">
-    <bcf:namepart order="1" hashscope="full">family</bcf:namepart>
-    <bcf:namepart order="2" hashscope="full">given</bcf:namepart>
-    <bcf:namepart order="3" hashscope="full">prefix</bcf:namepart>
-    <bcf:namepart order="4" hashscope="full">suffix</bcf:namepart>
-  </bcf:namehashtemplate>
   <!-- SORTING NAME KEY TEMPLATES -->
-  <bcf:sortingnamekeytemplate name="global" visibility="sort">
+  <bcf:sortingnamekeytemplate name="global">
     <bcf:keypart order="1">
       <bcf:part type="namepart" order="1" use="1">prefix</bcf:part>
       <bcf:part type="namepart" order="2">family</bcf:part>
@@ -2369,22 +2345,225 @@
   <!-- CITATION DATA -->
   <!-- SECTION 0 -->
   <bcf:bibdata section="0">
-    <bcf:datasource type="file" datatype="bibtex" glob="false">Publications.bib</bcf:datasource>
+    <bcf:datasource type="file" datatype="bibtex" glob="false">TodosNuevo.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1" intorder="1" nocite="1">*</bcf:citekey>
-    <bcf:citekey order="2" intorder="1">Moor20a</bcf:citekey>
-    <bcf:citekey order="3" intorder="1">Bock18</bcf:citekey>
+    <bcf:citekey order="0" nocite="1">*</bcf:citekey>
+    <bcf:citekey order="1">MarcoNuno_Revista_2024_06_00</bcf:citekey>
+    <bcf:citekey order="2">MarcoNuno_CongArbEsp_2023_10_02A</bcf:citekey>
+    <bcf:citekey order="3">MarcoNuno_CongArbEsp_2023_10_02B</bcf:citekey>
+    <bcf:citekey order="4">MarcoNuno_Revista_2023_10_00</bcf:citekey>
+    <bcf:citekey order="5">MarcoNuno_CongArbEsp_2023_09_0X</bcf:citekey>
+    <bcf:citekey order="6">MarcoNuno_Revista_2023_09_00</bcf:citekey>
+    <bcf:citekey order="7">MarcoNuno_CongArbEsp_2023_07_01</bcf:citekey>
+    <bcf:citekey order="8">MarcoNuno_CongArbEsp_2023_07_02</bcf:citekey>
+    <bcf:citekey order="9">MarcoNuno_CongArbEsp_2022_12_02</bcf:citekey>
+    <bcf:citekey order="10">MarcoNuno_CongArbEsp_2022_12_01</bcf:citekey>
+    <bcf:citekey order="11">MarcoNuno_CongArbEsp_2022_12_03</bcf:citekey>
+    <bcf:citekey order="12">MarcoNuno_Revista_2022_11_00</bcf:citekey>
+    <bcf:citekey order="13">MarcoNuno_CongArbEsp_2022_11_02</bcf:citekey>
+    <bcf:citekey order="14">MarcoNuno_CongArbEsp_2022_11_03</bcf:citekey>
+    <bcf:citekey order="15">MarcoNuno_CongArbEsp_2022_11_01</bcf:citekey>
+    <bcf:citekey order="16">MarcoNuno_CongArbEsp_2022_11_04</bcf:citekey>
+    <bcf:citekey order="17">MarcoNuno_Revista_2022_09_00</bcf:citekey>
+    <bcf:citekey order="18">MarcoNuno_Revista_2022_07_00</bcf:citekey>
+    <bcf:citekey order="19">MarcoNuno_Revista_2022_06_00</bcf:citekey>
+    <bcf:citekey order="20">MarcoNuno_Revista_2022_03_00</bcf:citekey>
+    <bcf:citekey order="21">MarcoNuno_CongArbEsp_2021_10_02</bcf:citekey>
+    <bcf:citekey order="22">MarcoNuno_Revista_2021_10_00</bcf:citekey>
+    <bcf:citekey order="23">MarcoNuno_CongArbEsp_2021_06_01</bcf:citekey>
+    <bcf:citekey order="24">MarcoNuno_Revista_2021_04_00</bcf:citekey>
+    <bcf:citekey order="25">MarcoNuno_CongArbEsp_2020_12_01</bcf:citekey>
+    <bcf:citekey order="26">MarcoNuno_CongArbEsp_2020_09_01</bcf:citekey>
+    <bcf:citekey order="27">MarcoNuno_Revista_2020_11_00</bcf:citekey>
+    <bcf:citekey order="28">MarcoNuno_Revista_2020_10_00</bcf:citekey>
+    <bcf:citekey order="29">MarcoNuno_Revista_2020_06_00</bcf:citekey>
+    <bcf:citekey order="30">MarcoNuno_Revista_2020_04_00</bcf:citekey>
+    <bcf:citekey order="31">8994792</bcf:citekey>
+    <bcf:citekey order="32">MarcoNuno_CongArbEsp_2019_09_01</bcf:citekey>
+    <bcf:citekey order="33">MarcoNuno_CongArbEsp_2018_09_01</bcf:citekey>
+    <bcf:citekey order="34">MarcoNuno_Revista_2018_08_00</bcf:citekey>
+    <bcf:citekey order="35">MarcoNuno_Revista_2018_07_00</bcf:citekey>
+    <bcf:citekey order="36">MarcoNuno_Revista_2018_03_00</bcf:citekey>
+    <bcf:citekey order="37">MarcoNuno_Revista_2018_02_00</bcf:citekey>
+    <bcf:citekey order="38">MarcoNuno_CongArbEsp_2016_09_01A</bcf:citekey>
+    <bcf:citekey order="39">MarcoNuno_CongArbEsp_2016_09_01B</bcf:citekey>
+    <bcf:citekey order="40">MarcoNuno_CongArbEsp_2015_09_01B</bcf:citekey>
+    <bcf:citekey order="41">MarcoNuno_CongArbEsp_2015_09_01C</bcf:citekey>
+    <bcf:citekey order="42">MarcoNuno_CongArbEsp_2015_09_01D</bcf:citekey>
+    <bcf:citekey order="43">MarcoNuno_CongArbEsp_2015_09_01E</bcf:citekey>
+    <bcf:citekey order="44">MarcoNuno_CongArbEsp_2015_09_01A</bcf:citekey>
+    <bcf:citekey order="45">MarcoNuno_CongArbIng_2015_02_00</bcf:citekey>
+    <bcf:citekey order="46">MarcoNuno_CongArbIng_2014_12_00X</bcf:citekey>
+    <bcf:citekey order="47">MarcoNuno_CongArbEsp_2014_11_01</bcf:citekey>
+    <bcf:citekey order="48">MarcoNuno_CongArbEsp_2014_10_01</bcf:citekey>
+    <bcf:citekey order="49">MarcoNuno_CongArbEsp_2014_09_02</bcf:citekey>
+    <bcf:citekey order="50">MarcoNuno_CongArbEsp_2014_09_01</bcf:citekey>
+    <bcf:citekey order="51">MarcoNuno_Revista_2014_10_00</bcf:citekey>
+    <bcf:citekey order="52">MarcoNuno_CongArbIng_2014_07_00</bcf:citekey>
+    <bcf:citekey order="53">MarcoNuno_CongArbIng_2014_06_00</bcf:citekey>
+    <bcf:citekey order="54">MarcoNuno_CongArbIng_2014_02_00</bcf:citekey>
+    <bcf:citekey order="55">MarcoNuno_CongArbEsp_2013_11_01</bcf:citekey>
+    <bcf:citekey order="56">MarcoNuno_CongArbEsp_2013_11_02</bcf:citekey>
+    <bcf:citekey order="57">MarcoNuno_CongArbEsp_2013_11_03</bcf:citekey>
+    <bcf:citekey order="58">MarcoNuno_CongArbEsp_2013_10_01</bcf:citekey>
+    <bcf:citekey order="59">MarcoNunoRevistaNoArb_2013_03_01</bcf:citekey>
+    <bcf:citekey order="60">MarcoNuno_Revista_2012_09_00</bcf:citekey>
+    <bcf:citekey order="61">MarcoNuno_CongArbIng_2012_08_00</bcf:citekey>
+    <bcf:citekey order="62">MarcoNuno_CongArbEsp_2012_10_00</bcf:citekey>
+    <bcf:citekey order="63">MarcoNuno_CongArbEsp_2012_10_01</bcf:citekey>
+    <bcf:citekey order="64">MarcoNuno_CongArbEsp_2012_10_02</bcf:citekey>
+    <bcf:citekey order="65">MarcoNuno_CongArbIng_2012_02_02</bcf:citekey>
+    <bcf:citekey order="66">MarcoNuno_CongArbIng_2012_02_00</bcf:citekey>
+    <bcf:citekey order="67">MarcoNuno_CongArbIng_2012_02_01</bcf:citekey>
+    <bcf:citekey order="68">MarcoNuno_RevistaESP_2012_04_00</bcf:citekey>
+    <bcf:citekey order="69">MarcoNuno_CongArbIng_2012_03_00</bcf:citekey>
+    <bcf:citekey order="70">MarcoNuno_CongArbIng_2012_01_00</bcf:citekey>
+    <bcf:citekey order="71">MarcoNuno_CongArbIng_2011_11_00</bcf:citekey>
+    <bcf:citekey order="72">MarcoNuno_CongArbEsp_2011_10_00</bcf:citekey>
+    <bcf:citekey order="73">MarcoNuno_CongArbIng_2011_10_00</bcf:citekey>
+    <bcf:citekey order="74">MarcoNuno_CongArbIng_2011_08_00</bcf:citekey>
+    <bcf:citekey order="75">MarcoNuno_Revista_2011_06_00</bcf:citekey>
+    <bcf:citekey order="76">MarcoNuno_CongArbIng_2010_12_00</bcf:citekey>
+    <bcf:citekey order="77">MarcoNuno_Revista_2010_09_00</bcf:citekey>
+    <bcf:citekey order="78">MarcoNuno_CongArbIng_2010_04_00</bcf:citekey>
+    <bcf:citekey order="79">MarcoNuno_Revista_2010_04_00</bcf:citekey>
+    <bcf:citekey order="80">MarcoNuno_CongArbIng_2009_06_00</bcf:citekey>
+    <bcf:citekey order="81">MarcoNuno_CongArbIng_2009_04_00</bcf:citekey>
+    <bcf:citekey order="82">MarcoNuno_CongArbIng_2007_12_00</bcf:citekey>
+    <bcf:citekey order="83">MarcoNunoRevistaNoArb05</bcf:citekey>
+    <bcf:citekey order="84">MarcoNuno_CongArbIng_2007_02_00</bcf:citekey>
+    <bcf:citekey order="85">MarcoNunoRevistaNoArb01</bcf:citekey>
+    <bcf:citekey order="86">MarcoNunoRevistaNoArb02</bcf:citekey>
+    <bcf:citekey order="87">MarcoNunoRevistaNoArb03</bcf:citekey>
+    <bcf:citekey order="88">MarcoNuno_CongArbIng_2005_09_00</bcf:citekey>
+    <bcf:citekey order="89">MarcoNuno_CongArbIng_2005_06_00</bcf:citekey>
+    <bcf:citekey order="90">MarcoNuno_CongArbEsp_2004_09_00</bcf:citekey>
+    <bcf:citekey order="91">MarcoNuno_CongArbIng_2003_12_00</bcf:citekey>
+    <bcf:citekey order="92">MarcoNuno_CongArbEsp_2003_09_00</bcf:citekey>
+    <bcf:citekey order="93">MarcoNuno_CongArbEsp_2003_05_00</bcf:citekey>
+    <bcf:citekey order="94">MarcoNunoRevistaNoArb04</bcf:citekey>
+    <bcf:citekey order="95">MarcoNuno_Revista_2024_06_00</bcf:citekey>
+    <bcf:citekey order="96">MarcoNuno_CongArbEsp_2023_10_02A</bcf:citekey>
+    <bcf:citekey order="97">MarcoNuno_CongArbEsp_2023_10_02B</bcf:citekey>
+    <bcf:citekey order="98">MarcoNuno_Revista_2023_10_00</bcf:citekey>
+    <bcf:citekey order="99">MarcoNuno_CongArbEsp_2023_09_0X</bcf:citekey>
+    <bcf:citekey order="100">MarcoNuno_Revista_2023_09_00</bcf:citekey>
+    <bcf:citekey order="101">MarcoNuno_CongArbEsp_2023_07_01</bcf:citekey>
+    <bcf:citekey order="102">MarcoNuno_CongArbEsp_2023_07_02</bcf:citekey>
+    <bcf:citekey order="103">MarcoNuno_CongArbEsp_2022_12_02</bcf:citekey>
+    <bcf:citekey order="104">MarcoNuno_CongArbEsp_2022_12_01</bcf:citekey>
+    <bcf:citekey order="105">MarcoNuno_CongArbEsp_2022_12_03</bcf:citekey>
+    <bcf:citekey order="106">MarcoNuno_Revista_2022_11_00</bcf:citekey>
+    <bcf:citekey order="107">MarcoNuno_CongArbEsp_2022_11_02</bcf:citekey>
+    <bcf:citekey order="108">MarcoNuno_CongArbEsp_2022_11_03</bcf:citekey>
+    <bcf:citekey order="109">MarcoNuno_CongArbEsp_2022_11_01</bcf:citekey>
+    <bcf:citekey order="110">MarcoNuno_CongArbEsp_2022_11_04</bcf:citekey>
+    <bcf:citekey order="111">MarcoNuno_Revista_2022_09_00</bcf:citekey>
+    <bcf:citekey order="112">MarcoNuno_Revista_2022_07_00</bcf:citekey>
+    <bcf:citekey order="113">MarcoNuno_Revista_2022_06_00</bcf:citekey>
+    <bcf:citekey order="114">MarcoNuno_Revista_2022_03_00</bcf:citekey>
+    <bcf:citekey order="115">MarcoNuno_CongArbEsp_2021_10_02</bcf:citekey>
+    <bcf:citekey order="116">MarcoNuno_Revista_2021_10_00</bcf:citekey>
+    <bcf:citekey order="117">MarcoNuno_CongArbEsp_2021_06_01</bcf:citekey>
+    <bcf:citekey order="118">MarcoNuno_Revista_2021_04_00</bcf:citekey>
+    <bcf:citekey order="119">MarcoNuno_CongArbEsp_2020_12_01</bcf:citekey>
+    <bcf:citekey order="120">MarcoNuno_CongArbEsp_2020_09_01</bcf:citekey>
+    <bcf:citekey order="121">MarcoNuno_Revista_2020_11_00</bcf:citekey>
+    <bcf:citekey order="122">MarcoNuno_Revista_2020_10_00</bcf:citekey>
+    <bcf:citekey order="123">MarcoNuno_Revista_2020_06_00</bcf:citekey>
+    <bcf:citekey order="124">MarcoNuno_Revista_2020_04_00</bcf:citekey>
+    <bcf:citekey order="125">8994792</bcf:citekey>
+    <bcf:citekey order="126">MarcoNuno_CongArbEsp_2019_09_01</bcf:citekey>
+    <bcf:citekey order="127">MarcoNuno_CongArbEsp_2018_09_01</bcf:citekey>
+    <bcf:citekey order="128">MarcoNuno_Revista_2018_08_00</bcf:citekey>
+    <bcf:citekey order="129">MarcoNuno_Revista_2018_07_00</bcf:citekey>
+    <bcf:citekey order="130">MarcoNuno_Revista_2018_03_00</bcf:citekey>
+    <bcf:citekey order="131">MarcoNuno_Revista_2018_02_00</bcf:citekey>
+    <bcf:citekey order="132">MarcoNuno_CongArbEsp_2016_09_01A</bcf:citekey>
+    <bcf:citekey order="133">MarcoNuno_CongArbEsp_2016_09_01B</bcf:citekey>
+    <bcf:citekey order="134">MarcoNuno_CongArbEsp_2015_09_01B</bcf:citekey>
+    <bcf:citekey order="135">MarcoNuno_CongArbEsp_2015_09_01C</bcf:citekey>
+    <bcf:citekey order="136">MarcoNuno_CongArbEsp_2015_09_01D</bcf:citekey>
+    <bcf:citekey order="137">MarcoNuno_CongArbEsp_2015_09_01E</bcf:citekey>
+    <bcf:citekey order="138">MarcoNuno_CongArbEsp_2015_09_01A</bcf:citekey>
+    <bcf:citekey order="139">MarcoNuno_CongArbIng_2015_02_00</bcf:citekey>
+    <bcf:citekey order="140">MarcoNuno_CongArbIng_2014_12_00X</bcf:citekey>
+    <bcf:citekey order="141">MarcoNuno_CongArbEsp_2014_11_01</bcf:citekey>
+    <bcf:citekey order="142">MarcoNuno_CongArbEsp_2014_10_01</bcf:citekey>
+    <bcf:citekey order="143">MarcoNuno_CongArbEsp_2014_09_02</bcf:citekey>
+    <bcf:citekey order="144">MarcoNuno_CongArbEsp_2014_09_01</bcf:citekey>
+    <bcf:citekey order="145">MarcoNuno_Revista_2014_10_00</bcf:citekey>
+    <bcf:citekey order="146">MarcoNuno_CongArbIng_2014_07_00</bcf:citekey>
+    <bcf:citekey order="147">MarcoNuno_CongArbIng_2014_06_00</bcf:citekey>
+    <bcf:citekey order="148">MarcoNuno_CongArbIng_2014_02_00</bcf:citekey>
+    <bcf:citekey order="149">MarcoNuno_CongArbEsp_2013_11_01</bcf:citekey>
+    <bcf:citekey order="150">MarcoNuno_CongArbEsp_2013_11_02</bcf:citekey>
+    <bcf:citekey order="151">MarcoNuno_CongArbEsp_2013_11_03</bcf:citekey>
+    <bcf:citekey order="152">MarcoNuno_CongArbEsp_2013_10_01</bcf:citekey>
+    <bcf:citekey order="153">MarcoNunoRevistaNoArb_2013_03_01</bcf:citekey>
+    <bcf:citekey order="154">MarcoNuno_Revista_2012_09_00</bcf:citekey>
+    <bcf:citekey order="155">MarcoNuno_CongArbIng_2012_08_00</bcf:citekey>
+    <bcf:citekey order="156">MarcoNuno_CongArbEsp_2012_10_00</bcf:citekey>
+    <bcf:citekey order="157">MarcoNuno_CongArbEsp_2012_10_01</bcf:citekey>
+    <bcf:citekey order="158">MarcoNuno_CongArbEsp_2012_10_02</bcf:citekey>
+    <bcf:citekey order="159">MarcoNuno_CongArbIng_2012_02_02</bcf:citekey>
+    <bcf:citekey order="160">MarcoNuno_CongArbIng_2012_02_00</bcf:citekey>
+    <bcf:citekey order="161">MarcoNuno_CongArbIng_2012_02_01</bcf:citekey>
+    <bcf:citekey order="162">MarcoNuno_RevistaESP_2012_04_00</bcf:citekey>
+    <bcf:citekey order="163">MarcoNuno_CongArbIng_2012_03_00</bcf:citekey>
+    <bcf:citekey order="164">MarcoNuno_CongArbIng_2012_01_00</bcf:citekey>
+    <bcf:citekey order="165">MarcoNuno_CongArbIng_2011_11_00</bcf:citekey>
+    <bcf:citekey order="166">MarcoNuno_CongArbEsp_2011_10_00</bcf:citekey>
+    <bcf:citekey order="167">MarcoNuno_CongArbIng_2011_10_00</bcf:citekey>
+    <bcf:citekey order="168">MarcoNuno_CongArbIng_2011_08_00</bcf:citekey>
+    <bcf:citekey order="169">MarcoNuno_Revista_2011_06_00</bcf:citekey>
+    <bcf:citekey order="170">MarcoNuno_CongArbIng_2010_12_00</bcf:citekey>
+    <bcf:citekey order="171">MarcoNuno_Revista_2010_09_00</bcf:citekey>
+    <bcf:citekey order="172">MarcoNuno_CongArbIng_2010_04_00</bcf:citekey>
+    <bcf:citekey order="173">MarcoNuno_Revista_2010_04_00</bcf:citekey>
+    <bcf:citekey order="174">MarcoNuno_CongArbIng_2009_06_00</bcf:citekey>
+    <bcf:citekey order="175">MarcoNuno_CongArbIng_2009_04_00</bcf:citekey>
+    <bcf:citekey order="176">MarcoNuno_CongArbIng_2007_12_00</bcf:citekey>
+    <bcf:citekey order="177">MarcoNunoRevistaNoArb05</bcf:citekey>
+    <bcf:citekey order="178">MarcoNuno_CongArbIng_2007_02_00</bcf:citekey>
+    <bcf:citekey order="179">MarcoNunoRevistaNoArb01</bcf:citekey>
+    <bcf:citekey order="180">MarcoNunoRevistaNoArb02</bcf:citekey>
+    <bcf:citekey order="181">MarcoNunoRevistaNoArb03</bcf:citekey>
+    <bcf:citekey order="182">MarcoNuno_CongArbIng_2005_09_00</bcf:citekey>
+    <bcf:citekey order="183">MarcoNuno_CongArbIng_2005_06_00</bcf:citekey>
+    <bcf:citekey order="184">MarcoNuno_CongArbEsp_2004_09_00</bcf:citekey>
+    <bcf:citekey order="185">MarcoNuno_CongArbIng_2003_12_00</bcf:citekey>
+    <bcf:citekey order="186">MarcoNuno_CongArbEsp_2003_09_00</bcf:citekey>
+    <bcf:citekey order="187">MarcoNuno_CongArbEsp_2003_05_00</bcf:citekey>
+    <bcf:citekey order="188">MarcoNunoRevistaNoArb04</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
-  <bcf:sortingtemplate name="nty">
+  <bcf:sortingtemplate name="ddatent">
     <bcf:sort order="1">
       <bcf:sortitem order="1">presort</bcf:sortitem>
     </bcf:sort>
     <bcf:sort order="2" final="1">
       <bcf:sortitem order="1">sortkey</bcf:sortitem>
     </bcf:sort>
-    <bcf:sort order="3">
+    <bcf:sort order="3" sort_direction="descending">
+      <bcf:sortitem order="1" substring_side="left" substring_width="4">sortyear</bcf:sortitem>
+      <bcf:sortitem order="2" substring_side="left" substring_width="4">year</bcf:sortitem>
+      <bcf:sortitem literal="1" order="3">9999</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="4" sort_direction="descending">
+      <bcf:sortitem order="1" pad_side="left" pad_width="2" pad_char="0">month</bcf:sortitem>
+      <bcf:sortitem literal="1" order="2">00</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="5" sort_direction="descending">
+      <bcf:sortitem order="1" pad_side="left" pad_width="2" pad_char="0">day</bcf:sortitem>
+      <bcf:sortitem literal="1" order="2">00</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="6" sort_direction="descending">
+      <bcf:sortitem order="1" pad_side="left" pad_width="4" pad_char="0">volume</bcf:sortitem>
+      <bcf:sortitem literal="1" order="2">9999</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="7">
       <bcf:sortitem order="1">sortname</bcf:sortitem>
       <bcf:sortitem order="2">author</bcf:sortitem>
       <bcf:sortitem order="3">editor</bcf:sortitem>
@@ -2392,28 +2571,19 @@
       <bcf:sortitem order="5">sorttitle</bcf:sortitem>
       <bcf:sortitem order="6">title</bcf:sortitem>
     </bcf:sort>
-    <bcf:sort order="4">
+    <bcf:sort order="8">
       <bcf:sortitem order="1">sorttitle</bcf:sortitem>
       <bcf:sortitem order="2">title</bcf:sortitem>
-    </bcf:sort>
-    <bcf:sort order="5">
-      <bcf:sortitem order="1">sortyear</bcf:sortitem>
-      <bcf:sortitem order="2">year</bcf:sortitem>
-    </bcf:sort>
-    <bcf:sort order="6">
-      <bcf:sortitem order="1">volume</bcf:sortitem>
-      <bcf:sortitem literal="1" order="2">0</bcf:sortitem>
     </bcf:sort>
   </bcf:sortingtemplate>
   <!-- DATALISTS -->
   <bcf:datalist section="0"
-                name="nty/global//global/global/global"
+                name="ddatent/global//global/global"
                 type="entry"
-                sortingtemplatename="nty"
+                sortingtemplatename="ddatent"
                 sortingnamekeytemplatename="global"
                 labelprefix=""
                 uniquenametemplatename="global"
-                labelalphanametemplatename="global"
-                namehashtemplatename="global">
+                labelalphanametemplatename="global">
   </bcf:datalist>
 </bcf:controlfile>
