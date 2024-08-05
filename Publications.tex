@@ -196,6 +196,11 @@ citecolor=green]{hyperref}
       \step[fieldset=keywords, fieldvalue={, }, appendstrict]
       \step[fieldset=keywords, fieldvalue=ColaboradorProyectos, append]
     }
+    \map{
+      \perdatasource{DisticionesAcademicas.bib}
+      \step[fieldset=keywords, fieldvalue={, }, appendstrict]
+      \step[fieldset=keywords, fieldvalue=DisticionesAcademicas, append]
+    }
   }
 }
 
@@ -219,6 +224,7 @@ citecolor=green]{hyperref}
 \addbibresource{DifusionEnEventos.bib}
 \addbibresource{Cursos.bib}
 \addbibresource{ColaboradorProyectos.bib}
+\addbibresource{DisticionesAcademicas.bib}
 
 
 \newcounter{num}
@@ -294,6 +300,13 @@ Publons:\ \  \textbf{\url{https://publons.com/researcher/1603078/marco-aurelio-n
 \ifthenelse{\(\value{num}=1\)}{\hyperlink{./../Evidencias/sensors-18-02202-v2.pdf.1}{Titulo y Cédula}}{}
 
  \end{itemize}
+
+% De uso exclusivo UPV - Duplicados entre Congresos, Cap de Libro y Revistas
+\section{Distinciones Académicas}
+\begin{refsection}[Disticiones Académicas]
+\nocite{*}
+\printbibliography[heading={none}, keyword=DisticionesAcademicas, resetnumbers=true]
+\end{refsection}
 
 % De uso exclusivo UPV
 \section{Cursos}
