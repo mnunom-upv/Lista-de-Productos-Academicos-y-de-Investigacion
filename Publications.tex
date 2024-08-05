@@ -201,6 +201,16 @@ citecolor=green]{hyperref}
       \step[fieldset=keywords, fieldvalue={, }, appendstrict]
       \step[fieldset=keywords, fieldvalue=DisticionesAcademicas, append]
     }
+    \map{
+      \perdatasource{PertenenciaGruposInvestigacion.bib}
+      \step[fieldset=keywords, fieldvalue={, }, appendstrict]
+      \step[fieldset=keywords, fieldvalue=PertenenciaGruposInvestigacion, append]
+    }
+    \map{
+      \perdatasource{OrganizadorEventos.bib}
+      \step[fieldset=keywords, fieldvalue={, }, appendstrict]
+      \step[fieldset=keywords, fieldvalue=OrganizadorEventos, append]
+    }
   }
 }
 
@@ -225,6 +235,8 @@ citecolor=green]{hyperref}
 \addbibresource{Cursos.bib}
 \addbibresource{ColaboradorProyectos.bib}
 \addbibresource{DisticionesAcademicas.bib}
+\addbibresource{PertenenciaGruposInvestigacion.bib}
+\addbibresource{OrganizadorEventos.bib}
 
 
 \newcounter{num}
@@ -238,7 +250,7 @@ citecolor=green]{hyperref}
 
 \begin{center}
     \textbf{\Large \scshape Marco Aurelio Nuño Maganda} \\ \vspace{1pt}
-    \textit{Profesor Investigador en Ciencias de la Computación} \\
+    \textit{Profesor Cientifico Investigador en Ciencias de la Computación} \\
     Última Actualización: \today \\
 \end{center}
 
@@ -301,11 +313,25 @@ Publons:\ \  \textbf{\url{https://publons.com/researcher/1603078/marco-aurelio-n
 
  \end{itemize}
 
+\section{OrganizadorEventos}
+\begin{refsection}[OrganizadorEventos]
+\nocite{*}
+\printbibliography[heading={none}, keyword=OrganizadorEventos, resetnumbers=true]
+\end{refsection}
+
+
 % De uso exclusivo UPV - Duplicados entre Congresos, Cap de Libro y Revistas
 \section{Distinciones Académicas}
-\begin{refsection}[Disticiones Académicas]
+\begin{refsection}[DisticionesAcademicas]
 \nocite{*}
 \printbibliography[heading={none}, keyword=DisticionesAcademicas, resetnumbers=true]
+\end{refsection}
+
+% De uso exclusivo UPV - Duplicados entre Congresos, Cap de Libro y Revistas
+\section{Pertenencia a Grupos de Investigación u Organizaciones Profesionales}
+\begin{refsection}[PertenenciaGruposInvestigacion]
+\nocite{*}
+\printbibliography[heading={none}, keyword=PertenenciaGruposInvestigacion, resetnumbers=true]
 \end{refsection}
 
 % De uso exclusivo UPV
