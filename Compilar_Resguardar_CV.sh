@@ -3,6 +3,7 @@
 #git add .
 #git commit -m "Initial Commit"
 #git config --global credential.helper store
+#git config --global user.email "mnunom@upv.edu.mx" 
 #git branch -M main
 #git remote add origin https://github.com/mnunom-upv/Lista-de-Productos-Academicos-y-de-Investigacion.git
 
