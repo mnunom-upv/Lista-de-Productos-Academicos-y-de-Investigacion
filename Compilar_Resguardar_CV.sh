@@ -22,7 +22,7 @@ biber Publications
 pdflatex Publications.tex
 pdflatex Publications.tex
 rm *.aux *.bbl *.blg *.out *.bcf *.xml *.log
-#open Publications.pdf
+open Publications.pdf
 #exit
 
 # Agrega un archivo
