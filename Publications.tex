@@ -196,6 +196,11 @@ citecolor=green]{hyperref}
       \step[fieldset=keywords, fieldvalue={, }, appendstrict]
       \step[fieldset=keywords, fieldvalue=OrganizadorEventos, append]
     }
+	\map{
+      \perdatasource{Gestion.bib}
+      \step[fieldset=keywords, fieldvalue={, }, appendstrict]
+      \step[fieldset=keywords, fieldvalue=Gestion, append]
+    }
   }
 }
 
@@ -222,6 +227,7 @@ citecolor=green]{hyperref}
 \addbibresource{DisticionesAcademicas.bib}
 \addbibresource{PertenenciaGruposInvestigacion.bib}
 \addbibresource{OrganizadorEventos.bib}
+\addbibresource{Gestion.bib}
 
 
 \newcounter{num}
@@ -297,6 +303,14 @@ Publons:\ \  \textbf{\url{https://publons.com/researcher/1603078/marco-aurelio-n
 \ifthenelse{\(\value{num}=1\)}{\hyperlink{./../Evidencias/sensors-18-02202-v2.pdf.1}{Titulo y Cédula}}{}
 
  \end{itemize}
+
+% De uso exclusivo UPV - Duplicados entre Congresos, Cap de Libro y Revistas
+\section{Gestion Académica}
+\begin{refsection}[GestionAcademica]
+\nocite{*}
+\printbibliography[heading={none}, keyword=Gestion, resetnumbers=true]
+\end{refsection}
+
 
 \section{OrganizadorEventos}
 \begin{refsection}[OrganizadorEventos]
