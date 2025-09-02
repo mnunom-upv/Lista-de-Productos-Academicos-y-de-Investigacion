@@ -26,7 +26,7 @@ citecolor=green]{hyperref}
 \fancyhf{} % clear all header and footer fields
 %\fancyfoot[R]{\thepage}
 %\fancyfoot[R]{Page \thepage \hspace{1pt} of \pageref{LastPage}}
-\fancyfoot[R]{Página \thepage \hspace{1pt} de \pageref{LastPage}}
+\fancyfoot[R]{                                         Página \thepage \hspace{1pt} de \pageref{LastPage}}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
@@ -201,12 +201,6 @@ citecolor=green]{hyperref}
       \step[fieldset=keywords, fieldvalue={, }, appendstrict]
       \step[fieldset=keywords, fieldvalue=Gestion, append]
     }
-	\map{
-      \perdatasource{AsignaturasLicenciatura.bib}
-      \step[fieldset=keywords, fieldvalue={, }, appendstrict]
-      \step[fieldset=keywords, fieldvalue=AsignaturasLicenciatura, append]
-    }
-
   }
 }
 
@@ -234,8 +228,6 @@ citecolor=green]{hyperref}
 \addbibresource{PertenenciaGruposInvestigacion.bib}
 \addbibresource{OrganizadorEventos.bib}
 \addbibresource{Gestion.bib}
-\addbibresource{AsignaturasLicenciatura.bib}
-
 
 
 \newcounter{num}
@@ -315,11 +307,11 @@ Publons:\ \  \textbf{\url{https://publons.com/researcher/1603078/marco-aurelio-n
  \end{itemize}
 
 % De uso exclusivo UPV - Duplicados entre Congresos, Cap de Libro y Revistas
-%\section{Gestión Académica y Evaluaciones Externas}
-%\begin{refsection}[Gestion]
-%\nocite{*}
-%\printbibliography[heading={none}, keyword=Gestion, resetnumbers=true]
-%\end{refsection}
+\section{Gestión Académica y Evaluaciones Externas}
+\begin{refsection}[Gestion]
+\nocite{*}
+\printbibliography[heading={none}, keyword=Gestion, resetnumbers=true]
+\end{refsection}
 
 
 \section{OrganizadorEventos}
@@ -330,25 +322,25 @@ Publons:\ \  \textbf{\url{https://publons.com/researcher/1603078/marco-aurelio-n
 
 
 % De uso exclusivo UPV - Duplicados entre Congresos, Cap de Libro y Revistas
-%\section{Distinciones Académicas}
-%\begin{refsection}[DisticionesAcademicas]
-%\nocite{*}
-%\printbibliography[heading={none}, keyword=DisticionesAcademicas, resetnumbers=true]
-%\end{refsection}
+\section{Distinciones Académicas}
+\begin{refsection}[DisticionesAcademicas]
+\nocite{*}
+\printbibliography[heading={none}, keyword=DisticionesAcademicas, resetnumbers=true]
+\end{refsection}
 
 % De uso exclusivo UPV - Duplicados entre Congresos, Cap de Libro y Revistas
-%\section{Pertenencia a Grupos de Investigación u Organizaciones Profesionales}
-%\begin{refsection}[PertenenciaGruposInvestigacion]
-%\nocite{*}
-%\printbibliography[heading={none}, keyword=PertenenciaGruposInvestigacion, resetnumbers=true]
-%\end{refsection}
+\section{Pertenencia a Grupos de Investigación u Organizaciones Profesionales}
+\begin{refsection}[PertenenciaGruposInvestigacion]
+\nocite{*}
+\printbibliography[heading={none}, keyword=PertenenciaGruposInvestigacion, resetnumbers=true]
+\end{refsection}
 
 % De uso exclusivo UPV
-%\section{Cursos}
-%\begin{refsection}[Cursos]
-%\nocite{*}
-%\printbibliography[heading={none}, keyword=Cursos, resetnumbers=true]
-%\end{refsection}
+\section{Cursos}
+\begin{refsection}[Cursos]
+\nocite{*}
+\printbibliography[heading={none}, keyword=Cursos, resetnumbers=true]
+\end{refsection}
 
 \section{Proyectos de Investigacion y Desarrollo Tecnológico}
 \begin{refsection}[ColaboradorProyectos]
@@ -359,17 +351,18 @@ Publons:\ \  \textbf{\url{https://publons.com/researcher/1603078/marco-aurelio-n
 
 
 % De uso exclusivo UPV - Duplicados entre Congresos, Cap de Libro y Revistas
-%\section{Difusión en Congresos Especializados}
-%\begin{refsection}[DifusionEnEventos]
-%\nocite{*}
-%\printbibliography[heading={none}, keyword=DEPA, resetnumbers=true]
-%\end{refsection}
+\section{Difusión en Congresos Especializados}
+\begin{refsection}[DifusionEnEventos]
+\nocite{*}
+\printbibliography[heading={none}, keyword=DEPA, resetnumbers=true]
+\end{refsection}
 
 
 
 \section{Divulgación de la Ciencia y la Tecnología}
 \begin{refsection}[DivulgacionCienciaTecnologia]
 \nocite{*}
+%\printbibliography[title={Divulgacion de Ciencia y Tecnologia}, keyword=DCyT, resetnumbers=true]
 \printbibliography[heading={none}, keyword=DCyT, resetnumbers=true]
 \end{refsection}
 
@@ -377,6 +370,7 @@ Publons:\ \  \textbf{\url{https://publons.com/researcher/1603078/marco-aurelio-n
 \section{Articulos Publicados en Revistas Arbitradas e Indexadas}
 \begin{refsection}[Revistas]
 \nocite{*}
+%\printbibliography[title={First Bibliography}, keyword=three, resetnumbers=true]
 \printbibliography[heading={none}, keyword=three, resetnumbers=true]
 \end{refsection}
 
@@ -387,16 +381,18 @@ Publons:\ \  \textbf{\url{https://publons.com/researcher/1603078/marco-aurelio-n
 \section{Articulos Publicados en Memorias de Congresos en Inglés}
 \begin{refsection}[CongresosArb]
 \nocite{*}
+%\printbibliography[title={Ponencias en Congresos Internacionales en Inglés}, keyword=four, resetnumbers=true]
 \printbibliography[heading={none}, keyword=four, resetnumbers=true]
 \end{refsection}
 
 
-%
-%\section{Articulos Publicados en Memorias de Congresos en Español}
-%\begin{refsection}[CongresosEspanol]
-%\nocite{*}
-%\printbibliography[heading={none}, keyword=five, resetnumbers=true]
-%\end{refsection}
+
+\section{Articulos Publicados en Memorias de Congresos en Español}
+\begin{refsection}[CongresosEspanol]
+\nocite{*}
+%\printbibliography[title={Ponencias en Congresos Internacionales en Espanol}, keyword=five, resetnumbers=true]
+\printbibliography[heading={none}, keyword=five, resetnumbers=true]
+\end{refsection}
 
 
 
@@ -407,14 +403,13 @@ Publons:\ \  \textbf{\url{https://publons.com/researcher/1603078/marco-aurelio-n
 \printbibliography[heading={none}, keyword=one, resetnumbers=true]
 \end{refsection}
 
-%\section{Tesis de Licenciatura Dirigidas}
-%\begin{refsection}[TesisDirigidasLicenciatura]
-%\nocite{*}
-%\printbibliography[heading={none}, keyword=two, resetnumbers=true]
-%\end{refsection}
+\section{Tesis de Licenciatura Dirigidas}
+\begin{refsection}[TesisDirigidasLicenciatura]
+\nocite{*}
+%\printbibliography[title={First Bibliography}, keyword=two, resetnumbers=true]
+\printbibliography[heading={none}, keyword=two, resetnumbers=true]
+\end{refsection}
 
-
-\end{document}
 
 
 % De requerir evidencias, deberan incluirse con sus respectivos
@@ -424,6 +419,8 @@ Publons:\ \  \textbf{\url{https://publons.com/researcher/1603078/marco-aurelio-n
 %\includepdf[pages=1-,link=true]{./../Evidencias/sensors-18-02202-v2.pdf}
 \ifthenelse{\(\value{num}=1\)}{\includepdf[pages={1},angle=90,link=true]{Evidencias/2025_06_OrganizadorSeminarioIA.pdf}}{}
 
+
+\end{document}
 
 
 \end{document}
