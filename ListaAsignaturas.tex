@@ -206,6 +206,11 @@ citecolor=green]{hyperref}
       \step[fieldset=keywords, fieldvalue={, }, appendstrict]
       \step[fieldset=keywords, fieldvalue=AsignaturasLicenciatura, append]
     }
+	\map{
+      \perdatasource{AsignaturasPosgrado.bib}
+      \step[fieldset=keywords, fieldvalue={, }, appendstrict]
+      \step[fieldset=keywords, fieldvalue=AsignaturasPosgrado, append]
+    }
   }
 }
 
@@ -234,6 +239,8 @@ citecolor=green]{hyperref}
 \addbibresource{OrganizadorEventos.bib}
 \addbibresource{Gestion.bib}
 \addbibresource{AsignaturasLicenciatura.bib}
+\addbibresource{AsignaturasPosgrado.bib}
+
 
 
 
@@ -263,6 +270,11 @@ citecolor=green]{hyperref}
 \end{refsection}
 
 
+\section{Asignaturas de Posgrado}
+\begin{refsection}[AsignaturasPosgrado]
+\nocite{*}
+\printbibliography[heading={none}, keyword=AsignaturasPosgrado, resetnumbers=true]
+\end{refsection}
 
 \end{document}
 
