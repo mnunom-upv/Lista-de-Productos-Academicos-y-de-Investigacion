@@ -253,20 +253,32 @@ citecolor=green]{hyperref}
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% Lista de colores
 \definecolor{color_2026}{rgb}{0.8, 0.2, 0.5}
 \definecolor{color_2025}{rgb}{0.5, 0.8, 0.2}
+\definecolor{color_2024}{rgb}{0.5, 0.0, 0.2}
 
 \DeclareBibliographyCategory{cursos_2026}
+% Licenciatura
 \addtocategory{cursos_2026}{teach:UPV:SistemasInteligentes:2026eneabr,teach:UPV:DesarrolloAppsMoviles:2026eneabr}
+% Maestría
 \addtocategory{cursos_2026}{FundamentosSI_abr_2026}
 
-
 \DeclareBibliographyCategory{cursos_2025}
+% Licenciatura
 \addtocategory{cursos_2025}{teach:UPV:SistemasInteligentes:2025eneabr,teach:UPV:ProgramacionMovil:2025mayago,teach:UPV:ProyectoIntegradorI:2025mayago,teach:UPV:DesarrolloAppsMoviles:2025sepdic}
+% Maestría
 \addtocategory{cursos_2025}{ProcesadoresDigitales_abr_2025,TopicosSelectosSistemas_ago_2025}
+
+\DeclareBibliographyCategory{cursos_2024}
+% Licenciatura
+\addtocategory{cursos_2024}{teach:UPV:LenguajesAutomatas:2024eneabr,teach:UPV:ProgramacionMovil:2024eneabr,teach:UPV:POO:2024mayago,teach:UPV:SistemasInteligentes:2024mayago,teach:UPV:ProgramacionMovil:2024sepdic}
+% Maestría
+\addtocategory{cursos_2024}{ProcesadoresDigitales_abr_2024,TopicosSelectosSistemas_ago_2024,FundamentosSI_dic_2024}
 
 \AtEveryBibitem{\ifcategory{cursos_2026}{\color{color_2026}}{}}
 \AtEveryBibitem{\ifcategory{cursos_2025}{\color{color_2025}}{}}
+\AtEveryBibitem{\ifcategory{cursos_2024}{\color{color_2024}}{}}
 
 
 \begin{document}
