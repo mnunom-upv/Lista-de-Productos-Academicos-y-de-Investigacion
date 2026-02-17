@@ -23,7 +23,7 @@ citecolor=green]{hyperref}
 
 
 \usepackage{xcolor}
-\definecolor{color_2026}{rgb}{0.8, 0.2, 0.5}
+
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -253,7 +253,8 @@ citecolor=green]{hyperref}
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
+\definecolor{color_2026}{rgb}{0.8, 0.2, 0.5}
+\definecolor{color_2025}{rgb}{0.5, 0.8, 0.2}
 
 \DeclareBibliographyCategory{cursos_2026}
 \addtocategory{cursos_2026}{teach:UPV:SistemasInteligentes:2026eneabr,teach:UPV:DesarrolloAppsMoviles:2026eneabr}
@@ -262,10 +263,10 @@ citecolor=green]{hyperref}
 
 \DeclareBibliographyCategory{cursos_2025}
 \addtocategory{cursos_2025}{teach:UPV:SistemasInteligentes:2025eneabr,teach:UPV:ProgramacionMovil:2025mayago,teach:UPV:ProyectoIntegradorI:2025mayago,teach:UPV:DesarrolloAppsMoviles:2025sepdic}
+\addtocategory{cursos_2025}{ProcesadoresDigitales_abr_2025,TopicosSelectosSistemas_ago_2025}
 
-
-\AtEveryBibitem{\ifcategory{cursos_2026}{\color{red}}{}}
-\AtEveryBibitem{\ifcategory{cursos_2025}{\color{green}}{}}
+\AtEveryBibitem{\ifcategory{cursos_2026}{\color{color_2026}}{}}
+\AtEveryBibitem{\ifcategory{cursos_2025}{\color{color_2025}}{}}
 
 
 \begin{document}
