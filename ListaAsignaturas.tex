@@ -257,6 +257,7 @@ citecolor=green]{hyperref}
 \definecolor{color_2026}{rgb}{0.8, 0.2, 0.5}
 \definecolor{color_2025}{rgb}{0.5, 0.8, 0.2}
 \definecolor{color_2024}{rgb}{0.5, 0.0, 0.2}
+\definecolor{color_2023}{rgb}{0.5, 1.0, 0.2}
 
 \DeclareBibliographyCategory{cursos_2026}
 % Licenciatura
@@ -276,9 +277,15 @@ citecolor=green]{hyperref}
 % Maestría
 \addtocategory{cursos_2024}{ProcesadoresDigitales_abr_2024,TopicosSelectosSistemas_ago_2024,FundamentosSI_dic_2024}
 
+\DeclareBibliographyCategory{cursos_2023}
+\addtocategory{cursos_2023}{teach:UPV:FPOO:2023mayago,teach:UPV:LenguajesAutomatas:2023eneabr,teach:UPV:ProgramacionMovil:2023sepdic,
+teach:UPV:SistemasInteligentes:2023mayago}
+
+
 \AtEveryBibitem{\ifcategory{cursos_2026}{\color{color_2026}}{}}
 \AtEveryBibitem{\ifcategory{cursos_2025}{\color{color_2025}}{}}
 \AtEveryBibitem{\ifcategory{cursos_2024}{\color{color_2024}}{}}
+\AtEveryBibitem{\ifcategory{cursos_2023}{\color{color_2023}}{}}
 
 
 \begin{document}
