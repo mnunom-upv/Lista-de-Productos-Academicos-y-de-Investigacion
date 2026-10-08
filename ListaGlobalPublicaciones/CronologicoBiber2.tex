@@ -22,8 +22,28 @@ pdfauthor={Marco Aurelio Nu\~no Maganda}
 
 %\preto\fullcite{\AtNextCite{\defcounter{maxnames}{99}}}
 
+\DeclareSortingTemplate{ddatent}{
+  \sort{
+    \field{year}
+  }
+  \sort{
+    \field{month}
+  }
+  \sort{
+    \field{day}
+  }
+  \sort{
+    \field{sortname}
+    \field{author}
+  }
+  \sort{
+    \field{title}
+  }
+}
+
+
 %sorting by date 
-\DeclareSortingScheme{ddatent}{
+\DeclareSortingScheme{ddatentX}{
     \sort{
         \field{presort}
     }
