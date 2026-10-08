@@ -23,6 +23,29 @@ pdfauthor={Marco Aurelio Nu\~no Maganda}
 %\preto\fullcite{\AtNextCite{\defcounter{maxnames}{99}}}
 
 \DeclareSortingTemplate{ddatent}{
+  \sort[direction=descending]{
+    \field{year}
+    \literal{9999} % Fallback for missing year
+  }
+  \sort[direction=descending]{
+    \field{month}
+    \literal{12}  % Fallback for missing month
+  }
+  \sort[direction=descending]{
+    \field{day}
+    \literal{31}  % Fallback for missing day
+  }
+  \sort{
+    \field{sortname}
+    \field{author}
+  }
+  \sort{
+    \field{title}
+  }
+}
+
+
+\DeclareSortingTemplate{ddatentXXXX}{
   \sort{
     \field{year}
   }
